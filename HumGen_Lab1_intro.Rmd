@@ -92,9 +92,9 @@ There are also many workshops and online R courses that you could take to follow
 
 ## Getting set up
 
-### Bio497
+### Bio478
 
-If you are an undergraduate in 497 go to [RStudio Cloud](https://rstudio.cloud/) and create an account. I will share the link for our Workspace in Chat. The steps are
+If you are an undergraduate in 478 go to [Posit Cloud](https://posit.cloud/) and create an account. I will share the link for our Workspace in an Announcement on Canvas. The steps are
 
 * Click on Link in Chat 
 * Join HumGen Workspace
@@ -102,9 +102,9 @@ If you are an undergraduate in 497 go to [RStudio Cloud](https://rstudio.cloud/)
 * Click on Project tab
 * Start assignment
 
-### Bio697
+### Bio678
 
-If you are a graduate student in 597 please set up an account (you will need your PIs approval) on Unity https://unity.rc.umass.edu/. You will be using R and RStudio from the Unity HPC. You are also welcome to use R and RStudio it from your own computer. Unity is the UMass High Performance Computing cluster. Unity staff maintain a Slack channel for help to solves bioinformatics-related issues. To join the Unity Slack community, please sign up with your UMass email [here](https://join.slack.com/t/unity-user-community/signup). If you’re unable to register with your school email, please contact hpc@umass.edu with your preferred email address and we’ll send you a direct invite. 
+If you are a graduate student in 678 please set up an account (you will need your PIs approval) on Unity https://unity.rc.umass.edu/. You will be using R and RStudio from the Unity HPC. You are also welcome to use R and RStudio it from your own computer. Unity is the UMass High Performance Computing cluster. Unity staff maintain a Slack channel for help to solves bioinformatics-related issues. To join the Unity Slack community, please sign up with your UMass email [here](https://join.slack.com/t/unity-user-community/signup). If you’re unable to register with your school email, please contact hpc@umass.edu with your preferred email address and we’ll send you a direct invite. 
 
 ### Working in RStudio
 
@@ -126,7 +126,7 @@ The default R studio appearance includes 4 windows.
 
 #### The R script(s) and data view window (upper left window)
 
-You should keep good notes as in a lab notebook and keep track of your R commands that you run so that you can or others can repeat the analyses.  This is done in a file that is usually save with the .R extension (e.g. mylab1_notes.R). The hash tag # signifies notes and is not run as R commands.  To create a new R script you can either go to File -> New -> R Script. You will also create a R markdown file that will generate a lab report for you to load into Moodle, but more on that below.
+You should keep good notes as in a lab notebook and keep track of your R commands that you run so that you can or others can repeat the analyses.  This is done in a file that is usually save with the .R extension (e.g. mylab1_notes.R). The hash tag # signifies notes and is not run as R commands.  To create a new R script you can either go to File -> New -> R Script. You will also create a R markdown file that will generate a lab report for you to load into Canvas, but more on that below.
 
 In this window you can type R commands into this file and run them. Just leave the cursor anywhere on the line where the command is and press Ctrl-R or click on the ‘Run’ icon above. Output will appear in the Console below.
 
@@ -378,7 +378,7 @@ Lab Reports will be made using the RMarkdown notation. To make a Lab Report
 
 ### What to turn in?
 
-* If you are working on RStudio Cloud or the Unity You will need to first export the your Lab1_yourname.html file to yourcomputer.
+* If you are working on Poist Cloud or the Unity You will need to first export the your Lab1_yourname.html file to your computer.
 
 ![](images/lab1/Export.png)
-* Then upload the file to Moodle
+* Then upload the file to Canvas
