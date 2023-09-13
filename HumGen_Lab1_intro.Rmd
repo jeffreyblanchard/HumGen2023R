@@ -88,15 +88,15 @@ There are also many workshops and online R courses that you could take to follow
 
 ### Unity Bioinformatics Slack Channel
 
-
+Unity is the UMass High Performance Computing cluster. Unity staff maintain a Slack channel for help to solves bioinformatics-related issues. To join the Unity Slack community, please sign up with your UMass email [here](https://join.slack.com/t/unity-user-community/signup). If you’re unable to register with your school email, please contact hpc@umass.edu with your preferred email address and we’ll send you a direct invite. 
 
 ## Getting set up
 
-### Bio478
+### Bio478 and Bio678
 
-If you are an undergraduate in 478 go to [Posit Cloud](https://posit.cloud/) and create an account. I will share the link for our Workspace in an Announcement on Canvas. The steps are
+[Posit Cloud](https://posit.cloud/) and create an account. I will share the link for our Workspace in an Announcement on Canvas. The steps are
 
-* Click on Link in Chat 
+* Click on Link in Canvas 
 * Join HumGen Workspace
 * Under your spaces select HumGen Workspace
 * Click on Project tab
@@ -104,7 +104,7 @@ If you are an undergraduate in 478 go to [Posit Cloud](https://posit.cloud/) and
 
 ### Bio678
 
-If you are a graduate student in 678 please set up an account (you will need your PIs approval) on Unity https://unity.rc.umass.edu/. You will be using R and RStudio from the Unity HPC. You are also welcome to use R and RStudio it from your own computer. Unity is the UMass High Performance Computing cluster. Unity staff maintain a Slack channel for help to solves bioinformatics-related issues. To join the Unity Slack community, please sign up with your UMass email [here](https://join.slack.com/t/unity-user-community/signup). If you’re unable to register with your school email, please contact hpc@umass.edu with your preferred email address and we’ll send you a direct invite. 
+If you are a graduate student in 678 please set up an account (you will need your PIs approval) on Unity https://unity.rc.umass.edu/. You will be using R and RStudio from the Unity HPC. You are also welcome to use R and RStudio it from your own computer. 
 
 ### Working in RStudio
 
