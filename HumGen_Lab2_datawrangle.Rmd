@@ -33,7 +33,7 @@ If you are using R on your own computer, Unity or even a separate RStudio Cloud 
 
 If you are installing R packages from source code (as we will do later in the course), first install the `devtools` package. I recommend doing this now. Check out this [Data Camp Tutorial](https://www.datacamp.com/community/tutorials/r-packages-guide) for more details on installing R packages.
 
-### Working the the packages - loading libraries
+### Working with the packages - loading libraries
 
 Simple!!!
 
@@ -43,7 +43,7 @@ library(tidyverse)
 
 ...but it is easy to forget this step. Which will result in an error message when you try to use the libraries' functions.
 
-...also even when you have loaded the library in your working environment. When you Knit an R Markdown file it only uses libraries loaded in the file so if you don't specifically load a library in the R Markdown file you will get an error meassage when Knitting in which the function that is part of the library could not be found. **This is a very common error**
+...also even when you have loaded the library in your working environment. When you Knit an R Markdown file it only uses libraries loaded in the file so if you don't specifically load a library in the R Markdown file you will get an error message when Knitting in which the function that is part of the library could not be found. **This is a very common error**
 
 ```{r, eval=FALSE}
 surveys <- read_csv("data_raw/portal_data_joined.csv")
@@ -71,7 +71,7 @@ In R and most programming languages there are many ways to do the same thing. In
 
 -   `ggplot2` - ggplot2 is a system for creating graphics, based on The Grammar of Graphics.
 
-### Programing
+### Programming
 
 -   `purrr` - purrr enhances R's functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive.
 
@@ -101,7 +101,7 @@ a <- c("1", "2", "3", "4")
 str(a)
 ```
 
-The numbers are read into the vector as characters. It is important to also note the distinction between reading data objects vs characaters.
+The numbers are read into the vector as characters. It is important to also note the distinction between reading data objects vs characters.
 
 ```{r}
 x <- c(1, 2, 3, 4)
@@ -136,7 +136,7 @@ str(SNPs_cat)
 
 In the following example, there are 3 levels (AA AG GG). The Environment window in the top right corner of RStudio will also display the value types.
 
-Another important distinction is between `integers` and `numbers` (often called doubles in tiyverse). See [Column data types](https://tibble.tidyverse.org/articles/types.html#overview-1) for a comprehensive list. Data types are also called atomic modes in R. The are built in objects like factors and dates for convience.
+Another important distinction is between `integers` and `numbers` (often called doubles in tiyverse). See [Column data types](https://tibble.tidyverse.org/articles/types.html#overview-1) for a comprehensive list. Data types are also called atomic modes in R. The are built in objects like factors and dates for convienence.
 
 ## Working with large files the Terminal Window (instead of Console)
 
@@ -144,7 +144,7 @@ Often in bioinformatics we are working on files that are to large to be opened i
 
 ![](images/lab2/file_too_large.png)
 
-We will use the `Terminal` window in the bottowm left corner to explore large files to determine their structure. In this window we can use unix commands if there are available on your computer (they are available on Posit Cloud and Unity). **Note these are unix and not R commands.** In terminal we can use the unix command `head` to look at the first 50 lines in the file 23andMe_complete.txt in the data directory.
+We will use the `Terminal` window in the bottom left corner to explore large files to determine their structure. In this window we can use Unix commands if there are available on your computer (they are available on Posit Cloud and Unity). **Note these are Unix and not R commands.** In terminal we can use the Unix command `head` to look at the first 50 lines in the file `23andMe_complete.txt` in the data directory.
 
 ```{r, eval=FALSE}
 head -25 data/23andMe_complete.txt
@@ -164,18 +164,18 @@ It is important to understand data and objects types, particularly when we are i
 
 All the data files for a lab will be in your RCloud project `data` directory. To import a file you must include the correct location of the file relative to where your .Rmd file is located. Let's try to read in a SNP genotype file from 23andMe. To read this into R using `read_tsv` (tab separated values) and ignore the comment lines containing #.
 
-
 ```{r, eval=FALSE}
 SNPs_23andMe <- read_tsv("data/23andMe_complete.txt", comment = '#')
 ```
 
-Look in the `Environment` window at the SNPs_23andMe object.  Notice that the columns names are ` rs548049170`, `1`, `69869` and `TT`.  This is because there is a hashtag on the line with the column names (as seen above in terminal). Bummer but we can work with that while importing the file 
+Look in the `Environment` window at the SNPs_23andMe object. Notice that the columns names are `rs548049170`, `1`, `69869` and `TT`. This is because there is a hash tag on the line with the column names (as seen above in terminal). Bummer but we can work with that while importing the file
 
 ```{r}
 SNPs_23andMe <- read_tsv("data/23andMe_complete.txt", comment = '#', col_names = FALSE) %>% 
   setNames(c("rsid","chromosome","position","genotype")) 
 ```
-Look again in the `Environment` window at the SNPs_23andMe object. Notice the column names are now correct, but we want `chromosome` and `genotype to be treated as factors. Let's make the change now.
+
+Look again in the `Environment` window at the SNPs_23andMe object. Notice the column names are now correct, but we want `chromosome` and \`genotype to be treated as factors. Let's make the change now.
 
 ```{r}
 SNPs_23andMe <- SNPs_23andMe %>% 
@@ -185,7 +185,7 @@ SNPs_23andMe <- SNPs_23andMe %>%
 
 ## A first introduction to data manipulation
 
-Data manipulation for making graphs and statistical analyses is a big part of this course. Today we will touch upon a few of the basics using the above data. Check out [dplyr vignettes](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for more examples. Manipulting data in the `tidyverse` uses pipes `%>%` to chain together steps. So if we want to filter the `UMass_COVID_data` to cases greater than 50. In this case we are not changing what is in the `UMass_COVID_data` data object
+Data manipulation for making graphs and statistical analyses is a big part of this course. Today we will touch upon a few of the basics using the above data. Check out [dplyr vignettes](https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html) for more examples. Manipulating data in the `tidyverse` uses pipes `%>%` to chain together steps. So if we want to filter the `UMass_COVID_data` to cases greater than 50. In this case we are not changing what is in the `UMass_COVID_data` data object
 
 ```{r}
 SNPs_23andMe %>% 
@@ -245,6 +245,7 @@ SNPs_23andMe_counts <-SNPs_23andMe %>%
 # to display data frame / tibble
 SNPs_23andMe_counts
 ```
+
 Use `mutate` to add a new column
 
 ```{r}
@@ -256,7 +257,7 @@ SNPs_23andMe_summarize <-SNPs_23andMe %>%
 SNPs_23andMe_summarize
 ```
 
-There are other functions you can use in summarize (https://dplyr.tidyverse.org/reference/summarise.html). For example, getting the minimum or maximum value in a range.
+There are other functions you can use in summarize (<https://dplyr.tidyverse.org/reference/summarise.html>). For example, getting the minimum or maximum value in a range.
 
 ```{r}
 SNPs_23andMe %>%
@@ -273,7 +274,7 @@ library(knitr)
 kable(SNPs_23andMe_counts, caption = "Number of rsids on each chromosome")
 ```
 
-This works well for small tables, but for even moderate tables like above it takes up a lot of space. In the above example 
+This works well for small tables, but for even moderate tables like above it takes up a lot of space. In the above example
 
 A better option is using the DT package, but \*\*\* Don't do this with tables of hundreds of thousands of rows (as in your complete SNP table).
 
@@ -282,15 +283,15 @@ library(DT)
 datatable(SNPs_23andMe_counts)
 ```
 
-We can click on the table to reorganize the data. 
+We can click on the table to reorganize the data.
 
 ## Exercises
 
-Use the 23andMe Commplete data set (mySNPs_all) for the exercises
+Use the 23andMe complete data set for the exercises
 
 ### Exercise 1
 
-Subset (select) the 23andMe Complete table to just position and genotype
+Subset (select) the 23andMe complete data frame to just position and genotype
 
 ### Exercise 2
 
@@ -315,5 +316,3 @@ Make a table for your report using DT to show SNP density
 ### Exercise 7
 
 Load the `AncestryDNA_complete.txt` file. Make a table of the number of SNPs (rsids) for each chromosome.
-
-
