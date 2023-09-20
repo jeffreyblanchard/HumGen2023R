@@ -1,7 +1,7 @@
 ---
 title: "RMarkdown template for Human Genome Analysis Labs"
-author: "Jeffrey Blanchard"
-date: "8/27/2022"
+author: "Yourself"
+date: "8/27/2023"
 output:
   html_document:
     toc: true
@@ -9,39 +9,4 @@ output:
     theme: united
     highlight: tango
 ---
-
-## Course examples
-
-```{r}
-x = 1 
-y = 2
-z = x + y
-z
-```
-
-## Exercises
-
-### Ex1
-
-```{r}
-
-```
-
-### Ex2
-
-```{r}
-
-```
-
-### Ex3
-
-```{r}
-
-```
-
-### Ex4
-
-```{r}
-
-```
 
