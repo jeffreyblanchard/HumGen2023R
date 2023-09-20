@@ -315,3 +315,5 @@ Make a table for your report using DT to show SNP density
 ### Exercise 7
 
 Load the `AncestryDNA_complete.txt` file. Make a table of the number of SNPs (rsids) for each chromosome.
+
+
