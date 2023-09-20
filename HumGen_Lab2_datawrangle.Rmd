@@ -43,7 +43,7 @@ library(tidyverse)
 
 ...but it is easy to forget this step. Which will result in an error message when you try to use the libraries' functions.
 
-...also even when you have loaded the library in your working environment. When you Knit an R Markdown file it only uses libraries loaded in the file so if you don't specifically load a library in the R Markdown file you will get an error message when Knitting in which the function that is part of the library could not be found. **This is a very common error**
+...also even when you have loaded the library in your working environment. When you Knit an R Markdown file it only uses libraries loaded in the file so if you don't specifically load a library in the R Markdown file you will get an error message when Knitting in which the function that is part of the library could not be found. **This is a very common error.**
 
 ```{r, eval=FALSE}
 surveys <- read_csv("data_raw/portal_data_joined.csv")
@@ -313,6 +313,3 @@ Building on ex3 sort chromosomes based on SNP density.
 
 Make a table for your report using DT to show SNP density
 
-### Exercise 7
-
-Load the `AncestryDNA_complete.txt` file. Make a table of the number of SNPs (rsids) for each chromosome.
