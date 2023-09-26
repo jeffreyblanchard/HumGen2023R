@@ -312,4 +312,3 @@ Building on ex3 sort chromosomes based on SNP density.
 ### Exercise 6
 
 Make a table for your report using DT to show SNP density
-
