@@ -49,8 +49,8 @@ To see more shortcuts in the menu `Tools` → `Keyboard Shortcuts Help`.
 
 ## On the Computer
 
-Today's lab we will use Data Carpentry tutorials for a different perspective.  Be sure to start at the section on [Starting with data](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html) [manipulating data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html) and a walk through of [ggplot](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html) using Data Carpentry's tutorials. Next week we will return to working with the SNP data.
+Today's lab we will use Data Carpentry tutorials for a different perspective.  Be sure to start at the section on [Starting with data](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html) then proceed to [manipulating data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html) and a walk through of [ggplot](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html) using Data Carpentry's tutorials. Next week we will return to working with the 23andMe and Ancestry data.
 
 ## What to upload to Canvas
 
-Create a report using R Markdown with all the [ggplot tutorial](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html) examples and with the challenges listed at the end.  Make sure you include code to load the data and libraries from the earlier Data Carpentry lessons.
+Create a report using R Markdown with all the [ggplot tutorial](https://datacarpentry.org/R-ecology-lesson/04-visualization-ggplot2.html) examples and with the challenges listed at the end.  Make sure you include code to load the data and libraries from the earlier Data Carpentry lessons.  If you are not doing this on Posit Cloud you will need to create a `data_raw` folder or modify the path when you download the `portal_data_joined.csv` file. 
