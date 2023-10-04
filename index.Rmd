@@ -9,4 +9,5 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 1 : [Introduction to R and Reproducible Research](HumGen_Lab1_intro.html)
 * Lab 2 : [Data Wrangling in the tidyverse](HumGen_Lab2_datawrangle.html)
 * Lab 3 : [Introduction to ggplot2](HumGen_Lab3_datavis.html)
+* Lab 3 : [More on ggplot2](HumGen_Lab4_pub_graphics.html)
 
