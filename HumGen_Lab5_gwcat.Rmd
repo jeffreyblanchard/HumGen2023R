@@ -236,7 +236,7 @@ ggplot(aes(x = reorder(`DISEASE/TRAIT`, count_of_entries, sum), y = count_of_ent
   geom_col() +
   coord_flip() +
   theme_bw() +
-  labs(title = "Which traits do you have the risk allele for\nthat have over 500 entries in the GWAS database?", y = "Count of entries", x = "Trait")
+  labs(title = "Example Figure 1 - Traits where the risk alleles have over 500 entries in the GWAS database?", y = "Count of entries", x = "Trait")
 ```
 
 
@@ -291,7 +291,7 @@ ggplot(aes(x = reorder(`DISEASE/TRAIT`, proportion_of_snps_for_trait, sum), y = 
   geom_col() +
   coord_flip() +
   theme_bw() + 
-  labs(title = "Traits I have more than half of the risk\nalleles studied where > 5 studies involved", 
+  labs(title = "Example Figure 2. Traits I have more than half of the risk\nalleles studied where > 5 studies involved", 
   y = "% of SNPs with risk allele", x = "Trait", fill = "Mean risk allele frequency") 
 ```
 
@@ -302,27 +302,34 @@ Only do these exercises after you have complete the above examples. The question
 
 ### Exercise #1
 
-Use str() to show columns and data types. Which column in `mySNPs_gwas_table` shows the allele frequency in a population? What does it mean if the allele frequency is high in terms of linkage to disease whose trait is only expressed in 1% of the population.
+Use str() to show columns and data types. 
 
 ### Exercise #2
 
-Modify the below code to select for Type 2 Diabetes risk alleles (put the trait of interest in lower case)
+Modify the below code to select for Type 2 Diabetes risk alleles (put the trait of interest in lower case). check `mySNPs_gwas_table` for proper capitalization and spacing
 
 ```{r, eval=FALSE}
-select(mySNPs_gwas_table, rsid, DISEASE.TRAIT, risk_allele = risk_allele_clean, your_geneotype = genotype) %>% 
- filter(str_detect(tolower(DISEASE.TRAIT), "omega") | str_detect(tolower(DISEASE.TRAIT), "fatty acid")) %>%
+mySNPs_gwas_table %>% 
+select(rsid, `DISEASE/TRAIT`, risk_allele = risk_allele_clean, your_geneotype = genotype) %>% 
+ filter(str_detect(tolower(`DISEASE/TRAIT`), "omega") | str_detect(tolower(`DISEASE/TRAIT`), "fatty acid")) %>%
  distinct()
 ```
 
 ### Exercise #3
 
-Now modify the above to find which risk alleles that person has for Type 2 diabetes
-
+Make a sortable database of ex2 using `DT` (datatable)
 
 ### Exercise #4
 
-Repeat Ex #2 and #3 using a trait of your choice
+Repeat Ex #3 using a trait of your choice
 
 ### Excerise #5
 
-Make a graph of traits with a risk allele frequency below 0.15 showing the % of SNPs with risk allele
+Make a graph of the trait of your choice with a risk allele frequency below 0.15 showing the % of SNPs with risk allele
+
+### Excercise #6
+
+Fitler you table to contain just data from the Y chromosome. Then select the same  columns as in Ex 2. Show the results in a DT datatable
+
+
+
