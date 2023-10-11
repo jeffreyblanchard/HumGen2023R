@@ -10,4 +10,5 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 2 : [Data Wrangling in the tidyverse](HumGen_Lab2_datawrangle.html)
 * Lab 3 : [Introduction to ggplot2](HumGen_Lab3_datavis.html)
 * Lab 4 : [More on ggplot2](HumGen_Lab4_pub_graphics.html)
+* Lab 5 : [Human Genome Analysis Lab 5 : Linking 23andME SNPs to the NHGRI-EBI Catalog of published genome-wide association studies](HumGen_Lab5_gwcat.html)
 

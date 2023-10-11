@@ -34,7 +34,7 @@ Here are a couple of cheatsheets that can be useful
 
 ### Controlling graph size in RMarkdown
 
-In the opening line of the RMarkdown code chunk {r} you can control the output of the code, graphs, tables using knitr syntax. For example if {r, eval = FALSE} the code will not be run, but will be shown. If {r, code = FALSE} the code will not be shown, but will be run and the output will be shown (useful in reports where the reader is only interested in the results/graphs, but not the code). You can also suppress error messages and warnings so that the reader isn't bothered by them (but you should take notice).
+In the opening line of the RMarkdown code chunk {r} you can control the output of the code, graphs, tables using knitr syntax. For example if {r, eval = FALSE} the code will not be run, but will be shown. If {r, code = FALSE} the code will not be shown, but will be run and the output will be shown (useful in reports where the reader is only interested in the results/graphs, but not the code). You can also suppress error messages and warnings so that the reader isn't bothered by them (but you should take notice). YOU CAN ALSO DO THIS NOW IN THE VISUAL EDITOR MODE IN RSTUDIO.
 
 The dimensions of an individual graph in the RMarkdown document be adjusted by specifying the graph dimensions as below.
 
@@ -132,8 +132,6 @@ ggplotly(
     geom_point()
  )
 ```
-
-
 
 ## Exercises
 
