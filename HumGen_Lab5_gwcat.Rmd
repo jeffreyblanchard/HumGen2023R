@@ -323,13 +323,13 @@ Make a sortable database of ex2 using `DT` (datatable)
 
 Repeat Ex #3 using a trait of your choice
 
-### Excerise #5
+### Excerise #5 (not required)
 
 Make a graph of the trait of your choice with a risk allele frequency below 0.15 showing the % of SNPs with risk allele
 
 ### Excercise #6
 
-Fitler you table to contain just data from the Y chromosome. Then select the same  columns as in Ex 2. Show the results in a DT datatable
+Fitler you table to contain just data from the Y chromosome. Then select the same columns as in Ex 2 (do not select a trait). Show the results in a DT datatable
 
 
 
