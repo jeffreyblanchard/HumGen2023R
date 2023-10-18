@@ -254,12 +254,6 @@ Using ggbio map a disease alleles to a circularized human genome.
 
 Make a graph using another aspect of the GWAS data.
 
-### Bonus 
-
-Identify whether you have in your data set any of the alleles identified in the Hugo Zeberg and Svante Pääbo PNAS articles. You can simply enter the RSIDs and use `filter` as in the earlier Part 1 to this lab.
-
-
-
 ## Acknowledgements
 
 Special thanks to former MCB student Dr. Kirk MacKinnon for ideas of further using the GWASCAT data and visualizaitions.
