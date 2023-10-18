@@ -56,7 +56,7 @@ gwcat <- as.data.frame(makeCurrentGwascat())
 
 Save table in case of internet issues
 ```{r, eval=FALSE}
-write_tsv(gwcat, "data/updated_gwcat.tsv") 
+write_tsv(gwcat, "data/updated_gwcat2.tsv") 
 ```
 
 
@@ -70,7 +70,7 @@ library(tidyverse)
 library(DT)
 library(gwascat)
 # If you are downloading gwascat to your computer increase the default download time
-# options(timeout=600)
+options(timeout=600)
 ```
 
 ## Exploring the traits associated with your genome using `gwascat`
@@ -82,7 +82,7 @@ The below examples and text are from a blog post by [Adam Metcalf](https://dabbl
 ```{r}
 # Load SNP file and convert genotype and chromosome to factors
 mySNPs <- read_tsv("data/23andMe_complete.txt", comment = '#', col_names = FALSE) %>% 
-  setNames(c("rsid","chromosome","position","genotype")) %>% 
+  setNames(c("rsid", "chromosome", "position", "genotype")) %>% 
   mutate(chromosome = as.factor(chromosome)) %>% 
   mutate(genotype = as.factor(genotype)) 
 ```
@@ -107,7 +107,7 @@ Not so exciting, but we can also use our rsid to link to [NHGRI-EBI Catalog of p
 
 #### Upload the gwas data table
 ```{r}
-gwcat <- read_tsv("data/updated_gwcat.tsv")
+gwcat <- read_tsv("data/updated_gwcat2.tsv")
 ```
 
 
