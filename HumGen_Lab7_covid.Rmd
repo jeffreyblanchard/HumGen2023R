@@ -16,37 +16,37 @@ editor_options:
 
 ## Learning Objectives
 
-* Understanding the sources of SARS-CoV-2 incidence reports
-* Accessing data remotely
-* Wide and long table formats
-* More data visualization with ggpl02
-* Animation
+-   Understanding the sources of SARS-CoV-2 incidence reports
+-   Accessing data remotely
+-   Wide and long table formats
+-   More data visualization with ggpl02
+-   Animation
 
 ## Visualizing COVID-19 cases, deaths and recoveries
 
-The virus has been recently renamed based on phylogenetic analysis severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease caused by the virus is coronavirus disease (COVID-19). In this lab we will work with reporting data on COVID-19 cases, deaths and recoveries. 
+The virus has been recently renamed based on phylogenetic analysis severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The disease caused by the virus is coronavirus disease (COVID-19). In this lab we will work with reporting data on COVID-19 cases, deaths and recoveries.
 
 ### Introduction to JHU case tracking data
 
-Researchers (Ensheng Dong, Hongru Du, Lauren Gardner) at John Hopkins University developed an [interactive dashboard](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) to visual data and track reported cases of coronavirus disease 2019 (SARS-CoV-2) in real time. The underlying data is collated from the following sources and updated several times a day.
+Researchers (Ensheng Dong, Hongru Du, Lauren Gardner) at John Hopkins University developed an [interactive dashboard](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) to visual data and track reported cases of coronavirus disease 2019 (SARS-CoV-2) in real time. The underlying data is collated from the following sources was updated several times a day until March 2023 (For more recent views of the data see the ([CDC tracker](https://covid.cdc.gov/covid-data-tracker/#datatracker) and [NY Times Tracker](https://www.nytimes.com/interactive/2023/us/covid-cases.html))
 
-It is important to understand that this data is only as accurate as the reporting and many cases of the disease go unreported because of a lack of testing. This some countries may have have confirmed cases because of more comprehensive testing. Thus, the reporting data represent a minimum number of cases. See posts and an article by UMass statistician [Prof. Nick Reich](https://twitter.com/reichlab)
+It is important to understand that this data is only as accurate as the reporting and many cases of the disease go unreported because of a lack of testing. This some countries may have have confirmed cases because of more comprehensive testing. Thus, the reporting data represent a minimum number of cases.
 
-JHU researchers make data that goes into the [dashboard](https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6) available on [Github repo for Novel Coronavirus (COVID-19) Cases](https://github.com/CSSEGISandData/COVID-19). In this lab we will work with this data. 
+JHU researchers make data that goes into the dashboard available on [Github repo for Novel Coronavirus (COVID-19) Cases](https://github.com/CSSEGISandData/COVID-19). In this lab we will work with this data.
 
 Let's take a look at the files and the structure of data in the files.
 
-* csse_covid_19_data
-  + csse_covid_19_daily_reports
-    - 03-11-2020.csv
-    
-Open up the file to look at the structure 
-    
-The file contains the columns 
+-   csse_covid_19_data
+    -   csse_covid_19_daily_reports
+        -   03-11-2020.csv
 
-Province/State 	Country/Region 	Last Update 	Confirmed 	Deaths 	Recovered 	Latitude 	Longitude
+Open up the file to look at the structure
 
-It is important to note that for some countries there is only one row, while for others (e.g. China and US) there are multiple rows representing different provinces or states. Thus, we will need to sum these rows to get a total count for the US and China when we make graphs. From experience in making this tutorial I know the Column names with __/__ will cause errors in ggplot (). 
+The file contains the columns
+
+Province/State Country/Region Last Update Confirmed Deaths Recovered Latitude Longitude
+
+It is important to note that for some countries there is only one row, while for others (e.g. China and US) there are multiple rows representing different provinces or states. Thus, we will need to sum these rows to get a total count for the US and China when we make graphs. From experience in making this tutorial I know the Column names with **/** will cause errors in ggplot ().
 
 ## On the Computer
 
@@ -57,7 +57,6 @@ library(tidyverse)
 library(lubridate)
 ```
 
-
 #### Data Wrangling
 
 We could load data directly into R each time we `knit`, it would make sure we have the most current data, but it is a time consuming step
@@ -67,7 +66,7 @@ time_series_confirmed <- read_csv(url("https://raw.githubusercontent.com/CSSEGIS
   rename(Province_State = "Province/State", Country_Region = "Country/Region") 
 ```
 
-In this case it is best to have the data on your computer and then load the file into R. I recommend do this and then setting eval=FALSE 
+In this case it is best to have the data on your computer and then load the file into R. I recommend do this and then setting eval=FALSE
 
 ```{r, eval=FALSE}
  download.file(url="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv", 
@@ -81,7 +80,7 @@ time_series_confirmed <- read_csv("data/time_series_covid19_confirmed_global.csv
   rename(Province_State = "Province/State", Country_Region = "Country/Region")
 ```
 
-Check the table properties to make sure the data imported as we expected. Click on the file in the top right or 
+Check the table properties to make sure the data imported as we expected. Click on the file in the top right or
 
 ```{r, message=FALSE}
 view(time_series_confirmed)
@@ -107,10 +106,9 @@ Let's look at the format of the data frame (tibble) now
 view(time_series_confirmed_long)
 ```
 
-
 #### Making Graphs from the time series data
 
-To make a times series graph of the confirmed cases we need to summarize the Country date to count up the individual state data for the US. 
+To make a times series graph of the confirmed cases we need to summarize the Country date to count up the individual state data for the US.
 
 ```{r, message=FALSE}
 time_series_confirmed_long%>% 
@@ -176,7 +174,7 @@ time_series_confirmed_long_daily %>%
       ggtitle("COVID-19 Confirmed Cases")
 ```
 
-By default, `geom_smooth()` adds a LOESS/LOWESS (Locally Weighted Scatterplot Smoothing) smoother to the data. That’s not what we’re after, though. Here is a fit using a generalized additive model (GAM)
+By default, `geom_smooth()` adds a LOESS/LOWESS (Locally Weighted Scatterplot Smoothing) smoother to the data. That's not what we're after, though. Here is a fit using a generalized additive model (GAM)
 
 ```{r, message=FALSE}
 time_series_confirmed_long_daily %>% 
@@ -185,25 +183,24 @@ time_series_confirmed_long_daily %>%
       geom_smooth(method = "gam", se = FALSE) +
       ggtitle("COVID-19 Confirmed Cases")
 ```
-      
+
 ## Animated Graphs with gganimate
 
-Animated graphs when down right have a great visual impact. You can do this in R and have your animations embedded on your web page. Essentially gganimate creates a series of files that are encompassed in a gif file. In addition to having this gif as part of your report file, you can save the gif and use in a slide or other presentations. It just takes a few lines of code to covert and existing ggplot graph into an animation. See [Tutorial for Getting Started with gganimate](https://gganimate.com/articles/gganimate.html) and
-[gganimate: How to Create Plots with Beautiful Animation in R](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
+Animated graphs when down right have a great visual impact. You can do this in R and have your animations embedded on your web page. Essentially gganimate creates a series of files that are encompassed in a gif file. In addition to having this gif as part of your report file, you can save the gif and use in a slide or other presentations. It just takes a few lines of code to covert and existing ggplot graph into an animation. See [Tutorial for Getting Started with gganimate](https://gganimate.com/articles/gganimate.html) and [gganimate: How to Create Plots with Beautiful Animation in R](https://www.datanovia.com/en/blog/gganimate-how-to-create-plots-with-beautiful-animation-in-r/)
 
 This are some important gganimate functions:
 
-* __transition_*()__ defines how the data should be spread out and how it relates to itself across time.
-* __view_*()__ defines how the positional scales should change along the animation.
-* __shadow_*()__ defines how data from other points in time should be presented in the given point in time.
-*  __enter_*()/exit_*()__ defines how new data should appear and how old data should disappear during the course of the animation.
-* __ease_aes()__ defines how different aesthetics should be eased during transitions.
+-   \_\_transition\_\*()\_\_ defines how the data should be spread out and how it relates to itself across time.
+-   \_\_view\_\*()\_\_ defines how the positional scales should change along the animation.
+-   \_\_shadow\_\*()\_\_ defines how data from other points in time should be presented in the given point in time.
+-   **enter\_*()/exit\_*()** defines how new data should appear and how old data should disappear during the course of the animation.
+-   **ease_aes()** defines how different aesthetics should be eased during transitions.
 
 ### Creating the animations
 
-Below are the packages I installed. There may be others that you need, in particular to rendering gifs. Several people needed to install the packages __gifski__ and __av__ Some of the examples may take several minutes to create the animation.
+Below are the packages I installed. There may be others that you need, in particular to rendering gifs. Several people needed to install the packages **gifski** and **av** Some of the examples may take several minutes to create the animation.
 
-* On Unity the following packages need to be loaded before `gifski` or `transformr` can be installed or their libraries loaded.  If have you already have installed this packages on Unity and you get a message to install them...ingore it. This step is require to load the unix software required to install and run these packages
+-   On Unity the following packages need to be loaded before `gifski` or `transformr` can be installed or their libraries loaded. If have you already have installed this packages on Unity and you get a message to install them...ingore it. This step is require to load the unix software required to install and run these packages
 
 ```{r, eval=FALSE}
 library("unitymodule")
@@ -234,19 +231,17 @@ p <- ggplot(daily_counts, aes(x = Date,  y = Daily, color = Country_Region)) +
 animate(p, renderer = gifski_renderer(), end_pause = 15)
 ```
 
-You can change the output to a gif file that can be used in slide presentations or a tweet. After you make the gif set eval=FALSE in your report so that it doesn't recreate the gif (this takes a fair amount of time) each time you Knit. 
+You can change the output to a gif file that can be used in slide presentations or a tweet. After you make the gif set eval=FALSE in your report so that it doesn't recreate the gif (this takes a fair amount of time) each time you Knit.
 
 ```{r, eval = FALSE, warnings=FALSE, message=FALSE}
 anim_save(animation = p, "daily_counts_US.gif")
 ```
-
 
 ```{r, eval = FALSE, warnings=FALSE, message=FALSE}
 # This download may take about 5 minutes. You only need to do this once so set eval=false in your Rmd file
 download.file(url="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv", 
   destfile = "data/time_series_covid19_deaths_global.csv")
 ```
-
 
 ```{r, warnings=FALSE, message=FALSE}
 time_series_deaths_confirmed <- read_csv("data/time_series_covid19_deaths_global.csv")%>%
@@ -301,4 +296,3 @@ Make a graph with the countries of your choice using the daily deaths data
 ### Exercise 6
 
 Make an animation of your choosing (do not use a graph with geom_smooth)
-

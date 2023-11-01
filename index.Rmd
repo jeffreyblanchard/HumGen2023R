@@ -13,3 +13,4 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 5 : [Linking 23andME SNPs to the NHGRI-EBI Catalog of published genome-wide association studies](HumGen_Lab5_gwcat.html)
 * Lab 6 : [GWASCAT Part 2](HumGen_Lab6_gwascat.html)
 * Lab 7 : [Data wrangling, graphing and animating the COVID-19 reporting data](HumGen_Lab7_covid.html)
+* Lab 8 : [Maps from the COVID-19 reporting data](HumGen_Lab8_maps.html)
