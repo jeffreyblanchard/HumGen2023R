@@ -269,7 +269,7 @@ ggplot(data = world, mapping = aes(x = long, y = lat, text = region, group = gro
 
 1. Update Anisa Dhana's graph layout of the US to 3/09/2023. You may need to adjust the range or change to a linear scale (delete trans="log") 
 
-2. Update the above graph "Number of Confirmed Cases by US County" to 3/109/2023 and use a different color scheme or theme
+2. Update the above graph "Number of Confirmed Cases by US County" to 3/09/2023 and use a different color scheme or theme
 
 3. Make an interactive plot using a state of your choosing using a theme different from used in the above examples.
 
