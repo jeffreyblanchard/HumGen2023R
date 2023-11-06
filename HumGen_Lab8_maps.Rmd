@@ -71,14 +71,14 @@ ggplot(daily_report, aes(x = Long, y = Lat, size = Confirmed/1000)) +
 Zoom in on US 48 states. To do this Alaska, Hawaii and US Territories are filtered. Some US State entries have a Lat and Long of zero, so these are filtered as well. 
 
 ```{r, warnings=FALSE, message=FALSE}
-daily_report_filtered <- daily_report %>% 
+daily_report_filtered_US <- daily_report %>% 
   filter(Country_Region == "US") %>% 
   filter (!Province_State %in% c("Alaska","Hawaii", "American Samoa",
                   "Puerto Rico","Northern Mariana Islands", 
                   "Virgin Islands", "Recovered", "Guam", "Grand Princess",
                   "District of Columbia", "Diamond Princess")) %>% 
   filter(Lat > 0)
-ggplot(daily_report_filtered, aes(x = Long, y = Lat, size = Confirmed)) +
+ggplot(daily_report_filtered_US, aes(x = Long, y = Lat, size = Confirmed)) +
     borders("state", colour = "black", fill = "grey90") +
     theme_bw() +
     geom_point(shape = 21, color='purple', fill='purple', alpha = 0.5) +
@@ -129,7 +129,7 @@ ggplot(daily_report_filtered_Dhana, aes(x = Long, y = Lat, size = Confirmed)) +
 ### Mapping data to shapes
 
 ```{r, warnings=FALSE, message=FALSE}
-daily_report_filtered <- daily_report %>% 
+daily_report_filtered_shapes <- daily_report %>% 
   filter(Country_Region == "US") %>% 
   group_by(Province_State) %>% 
   summarize(Confirmed = sum(Confirmed)) %>% 
@@ -137,7 +137,7 @@ daily_report_filtered <- daily_report %>%
 # load the US map data
 us <- map_data("state")
 # We need to join the us map data with our daily report to make one data frame/tibble
-state_join <- left_join(us, daily_report_filtered, by = c("region" = "Province_State"))
+state_join <- left_join(us, daily_report_filtered_shapes, by = c("region" = "Province_State"))
 # plot state map
 ```
 
@@ -164,7 +164,7 @@ library(RColorBrewer)
 # To display only colorblind-friendly brewer palettes, specify the option colorblindFriendly = TRUE as follow:
 # display.brewer.all(colorblindFriendly = TRUE)
 # Get and format the covid report data
-daily_report_filtered <- daily_report %>% 
+daily_report_filtered_shapes <- daily_report %>% 
   unite(Key, Admin2, Province_State, sep = ".") %>% 
   group_by(Key) %>% 
   summarize(Confirmed = sum(Confirmed)) %>% 
@@ -175,7 +175,7 @@ us <- map_data("state")
 counties <- map_data("county") %>% 
   unite(Key, subregion, region, sep = ".", remove = FALSE)
 # Join the 2 tibbles
-state_join <- left_join(counties, daily_report_filtered, by = c("Key"))
+state_join <- left_join(counties, daily_report_filtered_shapes, by = c("Key"))
 # sum(is.na(state_join$Confirmed))
 ggplot(data = us, mapping = aes(x = long, y = lat, group = group)) + 
   coord_fixed(1.3) + 
@@ -192,7 +192,7 @@ ggplot(data = us, mapping = aes(x = long, y = lat, group = group)) +
 If we look at just Massachusetts
 
 ```{r, warnings=FALSE, message=FALSE}
-daily_report_filtered <- daily_report %>% 
+daily_report_filtered_MA <- daily_report %>% 
   filter(Province_State == "Massachusetts") %>% 
   group_by(Admin2) %>% 
   summarize(Confirmed = sum(Confirmed)) %>% 
@@ -201,7 +201,7 @@ us <- map_data("state")
 ma_us <- subset(us, region == "massachusetts")
 counties <- map_data("county")
 ma_county <- subset(counties, region == "massachusetts")
-state_join <- left_join(ma_county, daily_report_filtered, by = c("subregion" = "Admin2")) 
+state_join <- left_join(ma_county, daily_report_filtered_MA, by = c("subregion" = "Admin2")) 
 # plot state map
 ggplot(data = ma_county, mapping = aes(x = long, y = lat, group = group)) + 
   coord_fixed(1.3) + 
@@ -223,6 +223,7 @@ daily_report
 In Lab 4 plotly was introduced. It is a great simple way to make interactive graphs with the maps
 
 ```{r, warnings=FALSE, message=FALSE}
+# !!!! This example assumes the prior code was run
 library(plotly)
 ggplotly(
   ggplot(data = ma_county, mapping = aes(x = long, y = lat, group = group)) + 
@@ -245,7 +246,7 @@ Here is an example with the world map
 
 ```{r}
 # Read in the daily report
-daily_report_filtered <- daily_report %>% 
+daily_report_filtered_world <- daily_report %>% 
   group_by(Country_Region) %>% 
   summarize(Confirmed = sum(Confirmed), Deaths = sum(Deaths))
 # Read in the world map data
@@ -259,7 +260,7 @@ world <- as_tibble(map_data("world")) %>%
         "Ivory Coast" = "Cote d'Ivoire", "Democratic Republic of the Congo" = "Congo (Kinshasa)", 
         "Republic of Congo" = "Congo (Brazzaville)")))
 # Join the covid report with the map data
-country_join <- left_join(world, daily_report_filtered, by = c("region" = "Country_Region"))
+country_join <- left_join(world, daily_report_filtered_world, by = c("region" = "Country_Region"))
 # Create the graph
 ggplotly(
 ggplot(data = world, mapping = aes(x = long, y = lat, text = region, group = group)) + 
