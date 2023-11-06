@@ -1,7 +1,5 @@
 ---
 title: "Human Genome Analysis Lab 9 : How Many Genetic Ancestors Do I have?"
-author: "Jeffrey Blanchard"
-date: "3/21/2021"
 output:
   html_document:
     toc: true
