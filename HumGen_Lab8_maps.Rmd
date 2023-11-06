@@ -280,5 +280,13 @@ ggplot(data = world, mapping = aes(x = long, y = lat, text = region, group = gro
 
 2. Update the above graph "Number of Confirmed Cases by US County" to 3/09/2023 and use a different color scheme or theme
 
-3. Make an interactive plot using a state of your choosing using a theme different from used in the above examples.
+3. Make an interactive plot using a state of your choosing using a theme different from used in the above examples. To do this change the above code chunk to the abbreviation for your choice state.
+
+```{r, eval=FALSE}
+ma_us <- subset(us, region == "massachusetts")
+counties <- map_data("county")
+ma_county <- subset(counties, region == "massachusetts")
+state_join <- left_join(ma_county, daily_report_filtered_MA, by = c("subregion" = "Admin2")) 
+```
+
 
