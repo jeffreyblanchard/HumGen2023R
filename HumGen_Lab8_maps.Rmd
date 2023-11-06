@@ -91,8 +91,16 @@ ggplot(daily_report_filtered, aes(x = Long, y = Lat, size = Confirmed)) +
 Here is a prettier version based on an example by Anisa Dhana
 
 ```{r, warnings=FALSE, message=FALSE}
+daily_report_filtered_Dhana <- daily_report %>% 
+  filter(Country_Region == "US") %>% 
+  filter (!Province_State %in% c("Alaska","Hawaii", "American Samoa",
+                  "Puerto Rico","Northern Mariana Islands", 
+                  "Virgin Islands", "Recovered", "Guam", "Grand Princess",
+                  "District of Columbia", "Diamond Princess")) %>% 
+  filter(Lat > 0)
+
 mybreaks <- c(1, 100, 1000, 10000, 10000)
-ggplot(daily_report_filtered, aes(x = Long, y = Lat, size = Confirmed)) +
+ggplot(daily_report_filtered_Dhana, aes(x = Long, y = Lat, size = Confirmed)) +
     borders("state", colour = "white", fill = "grey90") +
     geom_point(aes(x=Long, y=Lat, size=Confirmed, color=Confirmed),stroke=F, alpha=0.7) +
     scale_size_continuous(name="Cases", trans="log", range=c(1,7), 
