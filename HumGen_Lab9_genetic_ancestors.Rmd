@@ -1,5 +1,5 @@
 ---
-title: "Human Genome Analysis Lab 5 : How Many Genetic Ancestors Do I have?"
+title: "Human Genome Analysis Lab 9 : How Many Genetic Ancestors Do I have?"
 author: "Jeffrey Blanchard"
 date: "3/21/2021"
 output:
@@ -17,8 +17,7 @@ editor_options:
 ## Learning Objectives
 
 * Understand the difference between genetic and genealogical ancestors
-* Learn to use online Genealogy resources
-* Construct a genealogy of yourself or someone you know 
+* Learn to call R scripts within a R markdown document
 
 # Genetic vs genealogical ancestors
 
