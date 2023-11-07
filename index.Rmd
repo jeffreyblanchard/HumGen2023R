@@ -15,3 +15,4 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 7 : [Data wrangling, graphing and animating the COVID-19 reporting data](HumGen_Lab7_covid.html)
 * Lab 8 : [Maps from the COVID-19 reporting data](HumGen_Lab8_maps.html)
 * Lab 9 : [How Many Genetic Ancestors Do I have?](HumGen_Lab9_genetic_ancestors.html)
+* Lab 10 : [Genealogical Ancestors and DNA matches](HumGen_Lab10_genealogical_ancestors.html)
