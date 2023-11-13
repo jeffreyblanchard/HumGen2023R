@@ -16,4 +16,5 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 8 : [Maps from the COVID-19 reporting data](HumGen_Lab8_maps.html)
 * Lab 9 : [How Many Genetic Ancestors Do I have?](HumGen_Lab9_genetic_ancestors.html)
 * Lab 10 : [Genealogical Ancestors and DNA matches](HumGen_Lab10_genealogical_ancestors.html)
-* Lab 11 : [Analysis of SNP data using SNPedia and Promethease](HumGen_Lab11_promethease.html)
+
+* Reflection : [Analysis of SNP data using SNPedia and Promethease](HumGen_promethease.html)
