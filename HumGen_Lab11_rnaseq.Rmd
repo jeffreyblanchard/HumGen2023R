@@ -144,4 +144,5 @@ A. Modify the graph to show a heat plot from the 50 genes with the highest varia
 
 B. Show the results using the rlog transformation which is in `rld`. What are the differences in patterns between the 2 types of transformations?
 
+Note: There is an new alternative 3-week old [DESeq2 vignette](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html). I have worked through the r code, installed the relevant libraries and included it in the files with the lab on Posit. You are not responsible for this, but it may aid in understanding parts of the rnaseq vignette.
 
