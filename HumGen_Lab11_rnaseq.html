@@ -437,16 +437,7 @@ Objectives</a></li>
 <li><a href="#background" id="toc-background">Background</a></li>
 <li><a href="#introduction-to-a-rna-seq-differential-expression-workflow" id="toc-introduction-to-a-rna-seq-differential-expression-workflow">Introduction
 to a RNA-Seq differential expression workflow</a></li>
-<li><a href="#exercises" id="toc-exercises">Exercises</a>
-<ul>
-<li><a href="#exercise-1" id="toc-exercise-1">Exercise 1</a></li>
-<li><a href="#exercise-2" id="toc-exercise-2">Exercise 2</a></li>
-<li><a href="#exercise-3" id="toc-exercise-3">Exercise 3</a></li>
-<li><a href="#exercise-4" id="toc-exercise-4">Exercise 4</a></li>
-<li><a href="#exercise-5" id="toc-exercise-5">Exercise 5</a></li>
-<li><a href="#exercise-6" id="toc-exercise-6">Exercise 6</a></li>
-<li><a href="#exercise-7" id="toc-exercise-7">Exercise 7</a></li>
-</ul></li>
+<li><a href="#exercises" id="toc-exercises">Exercises</a></li>
 </ul>
 </div>
 
@@ -545,82 +536,14 @@ time</p>
 </div>
 <div id="exercises" class="section level2">
 <h2>Exercises</h2>
-<p>The below exercises are based on understanding and adapting code from
-a tutorial “RNA-Seq workflow: gene-level exploratory analysis and
-differential expression”. The exercises build on your knowledge of base
-R graphics and ggplot. Go slowly and try to understand each step. Add
-code chunks for exercises 4- at the end of your .Rmd file with the
-tutorial code.</p>
-<ul>
-<li>Important note: At the beginning of the Rmd file add the line
-options(connectionObserver = NULL) within a R code chunk.</li>
-</ul>
-<div id="exercise-1" class="section level3">
-<h3>Exercise 1</h3>
-<p>Read through the <a href="https://master.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html">html</a>
-version of the vignette.</p>
-</div>
-<div id="exercise-2" class="section level3">
-<h3>Exercise 2</h3>
-<p>Transform the R script that is part of the vignette into a .Rmd file,
-adding captions and your own notes along the way. This is a good time to
-<strong>explore</strong> by changing the vignette code. Note that the
-workflow in R starts with <strong>2.3 Reading in data with
-tximeta</strong>. The step previous to this <strong>2.2 Quantifying with
-Salmon</strong> is done outside of R on a Unix computer or Galaxy.</p>
-</div>
-<div id="exercise-3" class="section level3">
-<h3>Exercise 3</h3>
-<p>In the
-<code>The variance stabilizing transformation and the rlog</code> 4.2
-section a data frame (df) is created by binding together select columns
-from data objects <code>dds</code>, <code>vsd</code> and
-<code>rld</code> that have different transformations of the data.</p>
-<p>A. Use <code>head</code> to show the names columns after this
-step.</p>
-<p>B. To show the information associated with these samples use
-<code>colData</code> on any of the 3 above data objects (similar to a
-previous step in the tutorial).</p>
-<p>C. Use <code>head</code> again to show what the titles in df look
-like after the step <code>colnames(df)[1:2] &lt;- c(&quot;x&quot;, &quot;y&quot;)</code></p>
-<p>D. Add x and y labels and a title to the graph showing the
-comparisions of the two samples with the 3 transformations.</p>
-<p>E. Change the comparison to the untreated and dex treated cell line
-N061011 samples</p>
-</div>
-<div id="exercise-4" class="section level3">
-<h3>Exercise 4</h3>
-<p>In the section <code>ggplotpca</code> change the PCA plot to color
-the points by cell type and the shape by whether they were treated with
-dexamethasone.</p>
-</div>
-<div id="exercise-5" class="section level3">
-<h3>Exercise 5</h3>
-<p>In the section <code>airwayDE</code> DESeq2 uses the
-Benjamini-Hochberg (BH) adjustment. If we increase the bar for
-significance testing to 0.01. How many such genes are there?</p>
-</div>
-<div id="exercise-6" class="section level3">
-<h3>Exercise 6</h3>
-<p>Just before the <code>plotcounts</code> section significant genes
-that have the highest fold increase after treatment are shown. Show the
-significant genes which decrease the most after after treatment</p>
-</div>
-<div id="exercise-7" class="section level3">
-<h3>Exercise 7</h3>
-<p>In the <code>genescluster</code> section.</p>
-<p>A. Modify the graph to show a heat plot from the 50 genes with the
-highest variance across samples. Are the same hierarchical cluster
-patterns retained as in the graph with the top 20 genes?</p>
-<p>B. Show the results using the rlog transformation which is in
-<code>rld</code>. What are the differences in patterns between the 2
-types of transformations?</p>
-<p>Note: There is an new alternative 3-week old <a href="https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html">DESeq2
+<p>Work through the <a href="https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html">DESeq2
 vignette</a>. I have worked through the r code, installed the relevant
-libraries and included it in the files with the lab on Posit. You are
-not responsible for this, but it may aid in understanding parts of the
-rnaseq vignette.</p>
-</div>
+libraries and included it in the files with the lab on Posit. Here is a
+direct link to the [DESeq2 R script](<a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html0" class="uri">https://bioconductor.org/packages/release/bioc/html/DESeq2.html0</a>.
+There are some spots in the html version that are commented out in the R
+script. This may not work and you are not responsible for them. For the
+lab convert the html file to a Rmd file as you have down with the other
+lab examples. Turn in the knitted html file.</p>
 </div>
 
 
