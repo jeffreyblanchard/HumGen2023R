@@ -18,4 +18,6 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 10 : [Genealogical Ancestors and DNA matches](HumGen_Lab10_genealogical_ancestors.html)
 * Lab 11 : [Analysis of transcriptome (RNA-Seq) data](HumGen_Lab11_rnaseq.html)
 
+* Genetic Testing [Report and Presentation](HumGen_Report.html)
+
 * Reflection : [Analysis of SNP data using SNPedia and Promethease](HumGen_promethease.html)
