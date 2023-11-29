@@ -10,7 +10,7 @@ output:
 
 ## Genetic Testing Report
 
-This class has two related final projects, a Genetic Testing Report and Poster Presentation. The content of the reports will be similar, but the audience will be different. For the Genetic Testing Report, it should be targeted towards an audience with little background in genetic testing. You could envision this as the report you would produce for the person being tested and/or to communicate your results to family members and friends. The report is due Friday Dec 16th. It should have the following components.
+This class has two related final projects, a Genetic Testing Report and Poster Presentation. The content of the reports will be similar, but the audience will be different. For the Genetic Testing Report, it should be targeted towards an audience with little background in genetic testing. You could envision this as the report you would produce for the person being tested and/or to communicate your results to family members and friends. The report is due Friday Dec 15th. There is an asssignment on posit cloud. Please complete your report using a R markdown file and submit the knitted html file as for lab reports. The report should have the following components.
 
 ### 1. Introduction to genetic testing and the underlying technology
 

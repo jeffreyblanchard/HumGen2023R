@@ -99,6 +99,3 @@ Select yes
 ## Exercises
 
 Work through the [DESeq2 vignette](https://bioconductor.org/packages/release/bioc/vignettes/DESeq2/inst/doc/DESeq2.html). I have worked through the r code, installed the relevant libraries and included it in the files with the lab on Posit. Here is a direct link to the [DESeq2 R script](https://bioconductor.org/packages/release/bioc/html/DESeq2.html0. There are some spots in the html version that are commented out in the R script. This may not work and you are not responsible for them. For the lab convert the html file to a Rmd file as you have down with the other lab examples. Turn in the knitted html file.
-
-
-Here is another option in greater detail - https://mperalc.gitlab.io/bulk_RNA-seq_workshop_2021/qc.html
